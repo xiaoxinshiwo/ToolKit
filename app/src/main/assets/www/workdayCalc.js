@@ -93,6 +93,7 @@ $(function() {
         let targetWorkDayContent = parseInt(sampleWorkDayContent) + parseInt(workDayCircle);
         if(targetWorkDayContent > 5){
             targetWorkDayContent = parseInt(targetWorkDayContent % 5);
+            targetWorkDayContent = targetWorkDayContent == 0 ? 1 : targetWorkDayContent;
         }
         let finalTargetWorkDayOrder='';
         switch (targetWorkDay) {
