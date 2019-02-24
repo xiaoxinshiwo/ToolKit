@@ -24,9 +24,11 @@ public class SplashActivity extends Activity{
         //去掉标题
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash);
-        ImageView imageView = findViewById(R.id.imageView);
+        ImageView imageViewMinmin = findViewById(R.id.imageViewMinmin);
         // 随机获取图片
-        imageView.setImageResource(getRandomImage());
+        imageViewMinmin.setImageResource(getRandomImage());
+        ImageView imageViewLogo = findViewById(R.id.imageViewLogo);
+        imageViewLogo.setImageResource(R.mipmap.ic_launcher);
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
@@ -44,10 +46,11 @@ public class SplashActivity extends Activity{
     private int getRandomImage(){
         // 随机选择启动图片
         Random random = new Random();
-        int imageIndex = random.nextInt(10) % 2;
+        int imageIndex = random.nextInt(100) % 3;
         Map<Integer,Integer> imageMap = new HashMap<>();
         imageMap.put(0,R.mipmap.minmin1);
         imageMap.put(1,R.mipmap.minmin2);
+        imageMap.put(2,R.mipmap.minmin3);
         return imageMap.get(imageIndex);
     }
 }

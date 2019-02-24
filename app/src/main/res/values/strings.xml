@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name" translatable="false">ToolKit</string>
+    <string name="app_desc" translatable="false">您的贴心助手</string>
 </resources>
