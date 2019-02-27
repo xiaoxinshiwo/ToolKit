@@ -8,7 +8,11 @@
     body,input,textarea{
         font-size:16px;
         align:center;
-      }
+    }
+    input{
+        height:30px;
+        width:180px;
+    }
 </style>
 <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="dateformat.js"></script>
@@ -17,7 +21,8 @@
 <table style="width:100%;margin-top:30%">
     <tr >
         <td>
-            参考班次:<input type="text" placeholder="如：2019-02-21,D,1,2" id="sample" disabled><br/>
+            参考班次:<input type="text" id="sample" disabled/>
+            <input type="button" id="submit" value = "设置" style="width:50px;height:30px;background-color: #2aa198;"/>
         </td>
     </tr>
     <tr>
@@ -27,7 +32,7 @@
     </tr>
     <tr>
         <td>
-            选择日期:<input type="date" id="dateTime"/>
+            选择日期:<input type="date" id="dateTime" />
         </td>
     </tr>
     <tr>

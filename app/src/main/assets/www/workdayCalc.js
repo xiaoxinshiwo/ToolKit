@@ -49,10 +49,23 @@ $(function() {
     // 2019-03-21,B,2,4
 
     $("#dateTime").val(DateFormat.format(new Date(), 'yyyy-MM-dd'));
+    $("#sample").val(localStorage.getItem('sampleWorkDayALL') || '2019-02-21,D,1,2');
     // 默认加载结果
     calc();
     $("#calc").click(function(){
         calc();
+    });
+    $("#submit").click(function(){
+        let buttonText = $("#submit").val();
+        if("设置" == buttonText){
+            $("#sample").removeAttr("disabled");
+            $("#submit").val("保存");
+        }else{
+            $("#sample").attr("disabled","disabled");
+            $("#submit").val("设置");
+            localStorage.setItem('sampleWorkDayALL',$("#sample").val());
+            calc();
+        }
     });
 
     /**
@@ -60,7 +73,7 @@ $(function() {
      */
     function calc() {
         // 下次更新的话仍需要以D班作为模板，因为D班是1 2 3 4 5 顺序的开始
-        let sampleWorkDayALL = '2019-02-21,D,1,2';
+        let sampleWorkDayALL = localStorage.getItem('sampleWorkDayALL') || '2019-02-21,D,1,2';
 
         let targetDate = new Date();
         let inputDate = $("#dateTime").val();

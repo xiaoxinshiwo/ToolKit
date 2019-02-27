@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
         WebView webView = findViewById(R.id.webView);
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
+        // 打开本地缓存提供JS调用,可以使用localstorage
+        settings.setDomStorageEnabled(true);
         webView.loadUrl("file:///android_asset/www/workdayCalc.html");
 
 
