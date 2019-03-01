@@ -1,17 +1,17 @@
 package com.xiaoxin.toolkit;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 import android.support.v4.os.CancellationSignal;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-public class FingerPrinterActivity extends AppCompatActivity {
+public class FingerPrinterActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
