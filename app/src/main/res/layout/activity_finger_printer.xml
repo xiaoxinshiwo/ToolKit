@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewFinger"
         android:layout_width="match_parent"
         android:layout_height="456dp"
         android:scaleType="center"

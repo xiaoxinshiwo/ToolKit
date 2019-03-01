@@ -9,6 +9,7 @@ import android.support.v4.os.CancellationSignal;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class FingerPrinterActivity extends Activity {
@@ -21,6 +22,8 @@ public class FingerPrinterActivity extends Activity {
         //去掉标题
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_finger_printer);
+        ImageView imageView = findViewById(R.id.imageViewFinger);
+        imageView.setImageResource(R.mipmap.fingerprint);
         // 指纹验证
         FingerprintManagerCompat fingerprintManagerCompat = FingerprintManagerCompat.from(this);
         boolean fingerPrintSupport = fingerprintManagerCompat.isHardwareDetected();
