@@ -31,7 +31,7 @@ public class SplashActivity extends Activity{
         imageViewLogo.setImageResource(R.mipmap.ic_launcher);
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, FingerPrinterActivity.class);
                 startActivity(intent);
                 //关闭splashActivity，将其回收，否则按返回键会返回此界面
                 SplashActivity.this.finish();

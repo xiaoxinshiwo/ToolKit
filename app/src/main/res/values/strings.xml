@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">ToolKit</string>
     <string name="app_desc" translatable="false">您的贴心助手</string>
+    <string name="finger_printer_check" translatable="false">请验证您的指纹</string>
 </resources>
