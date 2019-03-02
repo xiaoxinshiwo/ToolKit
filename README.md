@@ -10,4 +10,4 @@ android load local html with js
 
 **todo**
 
-* 指纹识别
+* 
