@@ -47,19 +47,20 @@ public class FingerPrinterActivity extends Activity {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 switch (msg.what) {
-                    case 1:   //验证错误
+                    case 1:
+                        //验证错误
                         break;
                     case 2:
                         //验证成功
-                        Toast.makeText(FingerPrinterActivity.this, "验证成功", Toast.LENGTH_SHORT).show();
                         // 跳转至main_activity
                         Intent intent = new Intent(FingerPrinterActivity.this, MainActivity.class);
                         startActivity(intent);
                         //关闭splashActivity，将其回收，否则按返回键会返回此界面
-                        FingerPrinterActivity.this.finish();                                break;
+                        FingerPrinterActivity.this.finish();
+                        break;
                     case 3:
                         //验证失败
-                        Toast.makeText(FingerPrinterActivity.this, "验证失败···", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FingerPrinterActivity.this, "验证失败,请重试", Toast.LENGTH_SHORT).show();
                         break;
                 }
 
