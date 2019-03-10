@@ -49,7 +49,7 @@ $(function() {
     // 2019-03-21,B,2,4
 
     $("#dateTime").val(DateFormat.format(new Date(), 'yyyy-MM-dd'));
-    $("#sample").val(localStorage.getItem('sampleWorkDayALL') || '2019-02-21,D,1,2');
+    $("#sample").val(localStorage.getItem('sampleWorkDayALL') || '2019-03-05,D,1,4');
     // 默认加载结果
     calc();
     $("#calc").click(function(){
@@ -73,7 +73,7 @@ $(function() {
      */
     function calc() {
         // 下次更新的话仍需要以D班作为模板，因为D班是1 2 3 4 5 顺序的开始
-        let sampleWorkDayALL = localStorage.getItem('sampleWorkDayALL') || '2019-02-21,D,1,2';
+        let sampleWorkDayALL = localStorage.getItem('sampleWorkDayALL') || '2019-03-05,D,1,4';
 
         let targetDate = new Date();
         let inputDate = $("#dateTime").val();
@@ -136,7 +136,12 @@ $(function() {
                 break;
             case 'C':
                 if('1' == targetWorkDayOrder){
-                    finalTargetWorkDayOrder = targetWorkDay.concat(targetWorkDayContent).concat('早早班 第一天   两点下班');
+                    if(targetWorkDayContent < 4){
+                        finalTargetWorkDayOrder = targetWorkDay.concat(targetWorkDayContent).concat('早早班 第一天   两点下班');
+
+                    }else{
+                        finalTargetWorkDayOrder = targetWorkDay.concat(targetWorkDayContent).concat(' 第一天   两点下班');
+                    }
                 }else{
                     finalTargetWorkDayOrder = targetWorkDay.concat(targetWorkDayContent).concat('第二天   国内第二个下班');
                 }
